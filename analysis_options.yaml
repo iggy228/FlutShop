@@ -1,0 +1,11 @@
+include: package:flutter_lints/flutter.yaml
+
+linter:
+  rules:
+    prefer_single_quotes: true  # Uncomment to enable the `prefer_single_quotes` rule
+    sort_constructors_first: true
+    always_declare_return_types: true
+    sort_child_properties_last: true
+    unawaited_futures: true
+    unsafe_html: true
+    use_full_hex_values_for_flutter_colors: true
