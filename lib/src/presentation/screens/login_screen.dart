@@ -32,14 +32,17 @@ class LoginScreen extends StatelessWidget {
                     Text(
                       kAppTitle,
                       style: Theme.of(context).textTheme.headline2?.copyWith(
-                            color: Color(0xffffffff),
+                            color: const Color(0xffffffff),
                           ),
                       textAlign: TextAlign.center,
                     ),
                   ],
                 ),
               ),
-              const LoginForm(),
+              const Padding(
+                padding: EdgeInsets.fromLTRB(16, 30, 16, 16),
+                child: LoginForm(),
+              ),
             ],
           ),
         ),

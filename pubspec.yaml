@@ -12,6 +12,7 @@ dependencies:
   auto_route: ^3.2.0
   flutter:
     sdk: flutter
+  flutter_svg: ^1.0.0
 
 dev_dependencies:
   auto_route_generator: ^3.2.0
@@ -28,6 +29,7 @@ flutter:
 
   assets:
    - assets/images/
+   - assets/icons/
 
   fonts:
    - family: PermanentMarker
@@ -40,7 +42,7 @@ flutter_gen:
   line_length: 80 # Optional (default: 80)
 
   # Optional
-#  integrations:
-#    flutter_svg: true
+  integrations:
+    flutter_svg: true
 #    flare_flutter: true
 #    rive: true
