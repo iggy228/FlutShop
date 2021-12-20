@@ -8,3 +8,10 @@ linter:
     unawaited_futures: true
     unsafe_html: true
     use_full_hex_values_for_flutter_colors: true
+
+analyzer:
+  exclude:
+    - "**/*.g.dart"
+    - "**/*.freezed.dart"
+  errors:
+    invalid_annotation_target: ignore

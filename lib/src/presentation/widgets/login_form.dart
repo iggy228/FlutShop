@@ -13,6 +13,7 @@ class LoginForm extends StatelessWidget {
         children: [
           TextFormField(
             autocorrect: false,
+            keyboardType: TextInputType.emailAddress,
             onChanged: (val) {},
             decoration: const InputDecoration(
               prefixIcon: Icon(Icons.person),
