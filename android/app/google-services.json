@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "645392120534",
+    "project_id": "flutshop-3090e",
+    "storage_bucket": "flutshop-3090e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:645392120534:android:9cf95d723f97811bdd2777",
+        "android_client_info": {
+          "package_name": "com.example.flut_shop"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "645392120534-iqd5hk8sor47jf62l9bld1a0ovq4qmpu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.flut_shop",
+            "certificate_hash": "732b6759889415dc145cd385944ad27c3681d4a2"
+          }
+        },
+        {
+          "client_id": "645392120534-kle0a81p10po9eftql7dhrkffgsriuvv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDrMN28g26Aq5IW1Sb7z1oia34kfcC-zt4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "645392120534-kle0a81p10po9eftql7dhrkffgsriuvv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

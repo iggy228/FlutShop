@@ -1,3 +1,4 @@
+import 'package:flut_shop/src/core/utils/validators/email_validator.dart';
 import 'package:flut_shop/src/gen/assets.gen.dart';
 import 'package:flut_shop/src/presentation/widgets/password_text_field.dart';
 import 'package:flutter/material.dart';
@@ -14,13 +15,16 @@ class LoginForm extends StatelessWidget {
           TextFormField(
             autocorrect: false,
             keyboardType: TextInputType.emailAddress,
+            validator: (val) => emailValidator(val),
             onChanged: (val) {},
             decoration: const InputDecoration(
               prefixIcon: Icon(Icons.person),
             ),
           ),
           const SizedBox(height: 16),
-          const PasswordTextField(),
+          PasswordTextField(
+            validator: (val) => emailValidator(val),
+          ),
           const SizedBox(height: 12),
           ElevatedButton(
             onPressed: () {},

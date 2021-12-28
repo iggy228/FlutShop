@@ -43,5 +43,17 @@ void main() {
       skip: 1,
       expect: () => [LoginFormState(email: testEmail, password: testPassword)],
     );
+
+    blocTest(
+      'Email and password validate',
+      build: () => loginFormBloc,
+      act: <LoginFormBloc>(bloc) {
+        bloc.add(LoginFormEmailChanged(testEmail));
+        bloc.add(LoginFormPasswordChanged(testPassword));
+        bloc.add(LoginFormLogin());
+      },
+      skip: 2,
+      expect: () => [LoginFormState(email: testEmail, password: testPassword)],
+    );
   });
 }
