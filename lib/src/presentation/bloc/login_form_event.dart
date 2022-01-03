@@ -16,3 +16,9 @@ class LoginFormPasswordChanged extends LoginFormEvent {
 }
 
 class LoginFormLogin extends LoginFormEvent {}
+
+class LoginFormRegister extends LoginFormEvent {}
+
+class LoginFormLoginViaGoogle extends LoginFormEvent {}
+
+class LoginFormResetAuthState extends LoginFormEvent {}

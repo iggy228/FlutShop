@@ -25,11 +25,12 @@ class _PasswordTextFieldState extends State<PasswordTextField> {
   Widget build(BuildContext context) {
     return TextFormField(
       autocorrect: false,
-      obscureText: showPassword,
-      onChanged: (val) {},
+      obscureText: !showPassword,
+      onChanged: widget.onChanged,
       validator: widget.validator,
       decoration: InputDecoration(
         prefixIcon: widget.prefixIcon,
+        hintText: 'Type your password',
         suffixIcon: IconButton(
           icon: Icon(showPassword ? Icons.visibility : Icons.visibility_off),
           onPressed: () => setState(() => showPassword = !showPassword),

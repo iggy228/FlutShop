@@ -1,7 +1,9 @@
+import 'package:flut_shop/src/domain/auth/auth_response.dart';
+
 abstract class IAuthFacade {
-  Future<void> login(String email, String password) async {}
+  Future<AuthResponse?> login(String email, String password) async {}
 
-  Future<void> register(String email, String password) async {}
+  Future<AuthResponse?> register(String email, String password) async {}
 
-  Future<void> loginViaGoogle() async {}
+  Future<AuthResponse?> loginViaGoogle() async {}
 }
