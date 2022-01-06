@@ -1,6 +1,6 @@
 import 'package:flut_shop/src/core/utils/constants.dart';
 import 'package:flut_shop/src/gen/assets.gen.dart';
-import 'package:flut_shop/src/presentation/widgets/login_form.dart';
+import 'package:flut_shop/src/presentation/widgets/auth/login_form.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatelessWidget {

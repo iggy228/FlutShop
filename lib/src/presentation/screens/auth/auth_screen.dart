@@ -1,3 +1,5 @@
+import 'package:auto_route/src/router/auto_router_x.dart';
+import 'package:flut_shop/src/core/routes/app_router.dart';
 import 'package:flut_shop/src/injection.dart';
 import 'package:flut_shop/src/presentation/bloc/login_form_bloc.dart';
 import 'package:flut_shop/src/presentation/screens/auth/login_screen.dart';
@@ -14,8 +16,7 @@ class AuthScreen extends StatelessWidget {
       child: BlocConsumer<LoginFormBloc, LoginFormState>(
         listener: (context, state) {
           state.authResponse.maybeWhen(
-            // TODO implement for navigating to home
-            success: (val) => print(val),
+            success: (val) => context.router.replace(const HomeScreenRoute()),
             error: (val) {
               showDialog(
                 context: context,

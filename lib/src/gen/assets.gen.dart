@@ -25,6 +25,10 @@ class $AssetsImagesGen {
 
   /// File path: assets/images/logo.png
   AssetGenImage get logo => const AssetGenImage('assets/images/logo.png');
+
+  /// File path: assets/images/lorem_ipsum.jpg
+  AssetGenImage get loremIpsum =>
+      const AssetGenImage('assets/images/lorem_ipsum.jpg');
 }
 
 class Assets {

@@ -2,6 +2,7 @@ import 'package:flut_shop/src/gen/fonts.gen.dart';
 import 'package:flutter/material.dart';
 
 final theme = ThemeData(
+  fontFamily: FontFamily.nunitoSans,
   inputDecorationTheme: InputDecorationTheme(
     border: OutlineInputBorder(
       borderRadius: BorderRadius.circular(8),

@@ -46,7 +46,13 @@ flutter:
    - family: PermanentMarker
      fonts:
        - asset: fonts/PermanentMarker-Regular.ttf
-
+   - family: NunitoSans
+     fonts:
+         - asset: fonts/NunitoSans-Regular.ttf
+         - asset: fonts/NunitoSans-SemiBold.ttf
+           weight: 600
+         - asset: fonts/NunitoSans-Bold.ttf
+           weight: 700
 
 flutter_gen:
   output: lib/src/gen

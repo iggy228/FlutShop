@@ -8,6 +8,9 @@
 class FontFamily {
   FontFamily._();
 
+  /// Font family: NunitoSans
+  static const String nunitoSans = 'NunitoSans';
+
   /// Font family: PermanentMarker
   static const String permanentMarker = 'PermanentMarker';
 }

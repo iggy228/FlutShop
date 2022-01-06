@@ -2,7 +2,7 @@ import 'package:flut_shop/src/core/utils/validators/email_validator.dart';
 import 'package:flut_shop/src/core/utils/validators/password_validator.dart';
 import 'package:flut_shop/src/gen/assets.gen.dart';
 import 'package:flut_shop/src/presentation/bloc/login_form_bloc.dart';
-import 'package:flut_shop/src/presentation/widgets/password_text_field.dart';
+import 'package:flut_shop/src/presentation/widgets/auth/password_text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
