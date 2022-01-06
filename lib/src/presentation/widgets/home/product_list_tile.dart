@@ -1,4 +1,3 @@
-import 'package:flut_shop/src/presentation/widgets/home/star_row.dart';
 import 'package:flutter/material.dart';
 
 class ProductListTile extends StatelessWidget {
@@ -64,7 +63,19 @@ class ProductListTile extends StatelessWidget {
                             fontWeight: FontWeight.bold,
                           ),
                     ),
-                    StarRow(activeCount: rating),
+                    ElevatedButton(
+                      onPressed: () {},
+                      style: ElevatedButton.styleFrom(
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 24,
+                          vertical: 8,
+                        ),
+                      ),
+                      child: Text(
+                        'Buy',
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                    ),
                   ],
                 ),
               ],
