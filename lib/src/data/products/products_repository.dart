@@ -11,12 +11,19 @@ class ProductsRepository implements IProductsRepository {
   const ProductsRepository(this._firestore);
 
   @override
-  Future<ProductsResponse> read() async {
-    final collection = await _firestore.collection('products').get();
+  Future<ProductsResponse> readAll() async {
+    try {
+      final collection = await _firestore.collection('products').get();
 
-    final products =
-        collection.docs.map((e) => Product.fromJson(e.data())).toList();
+      final products = collection.docs
+          .map(
+            (e) => Product.fromJson(e.data()),
+          )
+          .toList();
 
-    return ProductsResponse.data(products);
+      return ProductsResponse.data(products);
+    } catch (e) {
+      return ProductsResponse.error(e.toString());
+    }
   }
 }
