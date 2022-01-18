@@ -1,7 +1,7 @@
 import 'package:auto_route/src/router/auto_router_x.dart';
 import 'package:flut_shop/src/core/routes/app_router.dart';
 import 'package:flut_shop/src/injection.dart';
-import 'package:flut_shop/src/presentation/bloc/login_form_bloc.dart';
+import 'package:flut_shop/src/presentation/bloc/auth/login_form_bloc.dart';
 import 'package:flut_shop/src/presentation/screens/auth/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
