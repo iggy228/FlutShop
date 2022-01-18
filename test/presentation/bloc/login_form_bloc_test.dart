@@ -2,7 +2,7 @@ import 'package:bloc_test/bloc_test.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flut_shop/src/data/auth/auth_facade.dart';
-import 'package:flut_shop/src/presentation/bloc/login_form_bloc.dart';
+import 'package:flut_shop/src/presentation/bloc/auth/login_form_bloc.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
