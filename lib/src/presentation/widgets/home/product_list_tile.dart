@@ -4,7 +4,6 @@ class ProductListTile extends StatelessWidget {
   final String title;
   final String description;
   final String price;
-  final int rating;
   final Widget image;
 
   const ProductListTile({
@@ -13,7 +12,6 @@ class ProductListTile extends StatelessWidget {
     required this.description,
     required this.image,
     required this.price,
-    this.rating = 0,
   }) : super(key: key);
 
   @override
