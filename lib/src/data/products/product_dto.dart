@@ -14,6 +14,7 @@ class ProductDto with _$ProductDto {
     required String title,
     required String description,
     required double price,
+    required String imageUrl,
   }) = _ProductDto;
 
   factory ProductDto.fromDomain(Product product) {
@@ -22,6 +23,7 @@ class ProductDto with _$ProductDto {
       title: product.title,
       description: product.description,
       price: product.price,
+      imageUrl: product.imageUrl,
     );
   }
 
@@ -31,6 +33,7 @@ class ProductDto with _$ProductDto {
       title: title,
       description: description,
       price: price,
+      imageUrl: imageUrl,
     );
   }
 

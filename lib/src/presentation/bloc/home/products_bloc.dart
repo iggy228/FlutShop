@@ -24,7 +24,6 @@ class ProductsBloc extends Bloc<ProductsEvent, ProductsState> {
     final response = await _productsRepository.readAll();
     response.when(
       data: (products) {
-        print('Data loaded');
         emit(state.copyWith(products: products));
       },
       error: (message) {},

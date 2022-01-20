@@ -25,12 +25,14 @@ class _$ProductDtoTearOff {
       {required String id,
       required String title,
       required String description,
-      required double price}) {
+      required double price,
+      required String imageUrl}) {
     return _ProductDto(
       id: id,
       title: title,
       description: description,
       price: price,
+      imageUrl: imageUrl,
     );
   }
 
@@ -48,6 +50,7 @@ mixin _$ProductDto {
   String get title => throw _privateConstructorUsedError;
   String get description => throw _privateConstructorUsedError;
   double get price => throw _privateConstructorUsedError;
+  String get imageUrl => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -60,7 +63,12 @@ abstract class $ProductDtoCopyWith<$Res> {
   factory $ProductDtoCopyWith(
           ProductDto value, $Res Function(ProductDto) then) =
       _$ProductDtoCopyWithImpl<$Res>;
-  $Res call({String id, String title, String description, double price});
+  $Res call(
+      {String id,
+      String title,
+      String description,
+      double price,
+      String imageUrl});
 }
 
 /// @nodoc
@@ -77,6 +85,7 @@ class _$ProductDtoCopyWithImpl<$Res> implements $ProductDtoCopyWith<$Res> {
     Object? title = freezed,
     Object? description = freezed,
     Object? price = freezed,
+    Object? imageUrl = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed
@@ -95,6 +104,10 @@ class _$ProductDtoCopyWithImpl<$Res> implements $ProductDtoCopyWith<$Res> {
           ? _value.price
           : price // ignore: cast_nullable_to_non_nullable
               as double,
+      imageUrl: imageUrl == freezed
+          ? _value.imageUrl
+          : imageUrl // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -105,7 +118,12 @@ abstract class _$ProductDtoCopyWith<$Res> implements $ProductDtoCopyWith<$Res> {
           _ProductDto value, $Res Function(_ProductDto) then) =
       __$ProductDtoCopyWithImpl<$Res>;
   @override
-  $Res call({String id, String title, String description, double price});
+  $Res call(
+      {String id,
+      String title,
+      String description,
+      double price,
+      String imageUrl});
 }
 
 /// @nodoc
@@ -124,6 +142,7 @@ class __$ProductDtoCopyWithImpl<$Res> extends _$ProductDtoCopyWithImpl<$Res>
     Object? title = freezed,
     Object? description = freezed,
     Object? price = freezed,
+    Object? imageUrl = freezed,
   }) {
     return _then(_ProductDto(
       id: id == freezed
@@ -142,6 +161,10 @@ class __$ProductDtoCopyWithImpl<$Res> extends _$ProductDtoCopyWithImpl<$Res>
           ? _value.price
           : price // ignore: cast_nullable_to_non_nullable
               as double,
+      imageUrl: imageUrl == freezed
+          ? _value.imageUrl
+          : imageUrl // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -153,7 +176,8 @@ class _$_ProductDto extends _ProductDto {
       {required this.id,
       required this.title,
       required this.description,
-      required this.price})
+      required this.price,
+      required this.imageUrl})
       : super._();
 
   factory _$_ProductDto.fromJson(Map<String, dynamic> json) =>
@@ -167,10 +191,12 @@ class _$_ProductDto extends _ProductDto {
   final String description;
   @override
   final double price;
+  @override
+  final String imageUrl;
 
   @override
   String toString() {
-    return 'ProductDto(id: $id, title: $title, description: $description, price: $price)';
+    return 'ProductDto(id: $id, title: $title, description: $description, price: $price, imageUrl: $imageUrl)';
   }
 
   @override
@@ -182,7 +208,8 @@ class _$_ProductDto extends _ProductDto {
             const DeepCollectionEquality().equals(other.title, title) &&
             const DeepCollectionEquality()
                 .equals(other.description, description) &&
-            const DeepCollectionEquality().equals(other.price, price));
+            const DeepCollectionEquality().equals(other.price, price) &&
+            const DeepCollectionEquality().equals(other.imageUrl, imageUrl));
   }
 
   @override
@@ -191,7 +218,8 @@ class _$_ProductDto extends _ProductDto {
       const DeepCollectionEquality().hash(id),
       const DeepCollectionEquality().hash(title),
       const DeepCollectionEquality().hash(description),
-      const DeepCollectionEquality().hash(price));
+      const DeepCollectionEquality().hash(price),
+      const DeepCollectionEquality().hash(imageUrl));
 
   @JsonKey(ignore: true)
   @override
@@ -209,7 +237,8 @@ abstract class _ProductDto extends ProductDto {
       {required String id,
       required String title,
       required String description,
-      required double price}) = _$_ProductDto;
+      required double price,
+      required String imageUrl}) = _$_ProductDto;
   const _ProductDto._() : super._();
 
   factory _ProductDto.fromJson(Map<String, dynamic> json) =
@@ -223,6 +252,8 @@ abstract class _ProductDto extends ProductDto {
   String get description;
   @override
   double get price;
+  @override
+  String get imageUrl;
   @override
   @JsonKey(ignore: true)
   _$ProductDtoCopyWith<_ProductDto> get copyWith =>

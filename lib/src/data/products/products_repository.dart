@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flut_shop/src/data/products/product_dto.dart';
 import 'package:flut_shop/src/domain/products/i_products_repository.dart';
+import 'package:flut_shop/src/domain/products/product.dart';
 import 'package:flut_shop/src/domain/products/products_response.dart';
 import 'package:injectable/injectable.dart';
 
@@ -15,11 +16,13 @@ class ProductsRepository implements IProductsRepository {
     try {
       final collection = await _firestore.collection('products').get();
 
-      final products = collection.docs.map(
-        (doc) {
-          return ProductDto.fromFirestore(doc).toDomain();
+      final List<Product> products = [];
+
+      collection.docs.forEach(
+        (doc) async {
+          products.add(ProductDto.fromFirestore(doc).toDomain());
         },
-      ).toList();
+      );
 
       return ProductsResponse.data(products);
     } catch (e) {

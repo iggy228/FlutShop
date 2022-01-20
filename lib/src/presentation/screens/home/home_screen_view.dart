@@ -1,5 +1,5 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flut_shop/src/domain/products/product.dart';
-import 'package:flut_shop/src/gen/assets.gen.dart';
 import 'package:flut_shop/src/presentation/bloc/home/products_bloc.dart';
 import 'package:flut_shop/src/presentation/widgets/home/product_list_tile.dart';
 import 'package:flutter/cupertino.dart';
@@ -52,7 +52,12 @@ class HomeScreenView extends StatelessWidget {
 
   ProductListTile buildProductListTile(Product product) {
     return ProductListTile(
-      image: Assets.images.loremIpsum.image(fit: BoxFit.cover),
+      image: CachedNetworkImage(
+        imageUrl: product.imageUrl,
+        progressIndicatorBuilder: (context, url, downloadProgress) =>
+            CircularProgressIndicator(value: downloadProgress.progress),
+        errorWidget: (context, url, error) => Icon(Icons.error),
+      ),
       title: product.title,
       description: product.description,
       price: '${product.price}€',
