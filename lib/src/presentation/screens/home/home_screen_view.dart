@@ -1,4 +1,6 @@
+import 'package:auto_route/src/router/auto_router_x.dart';
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flut_shop/src/core/routes/app_router.dart';
 import 'package:flut_shop/src/domain/products/product.dart';
 import 'package:flut_shop/src/presentation/bloc/home/products_bloc.dart';
 import 'package:flut_shop/src/presentation/widgets/home/product_list_tile.dart';
@@ -14,6 +16,11 @@ class HomeScreenView extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Welcome User'),
+      ),
+      floatingActionButton: FloatingActionButton(
+        // screen with add new item
+        onPressed: () => context.router.push(const CreateProductScreenRoute()),
+        child: Icon(Icons.add),
       ),
       body: buildListView(context),
     );

@@ -24,13 +24,19 @@ class _$AppRouter extends RootStackRouter {
     HomeScreenRoute.name: (routeData) {
       return MaterialPageX<dynamic>(
           routeData: routeData, child: const HomeScreen());
+    },
+    CreateProductScreenRoute.name: (routeData) {
+      return MaterialPageX<dynamic>(
+          routeData: routeData, child: const CreateProductScreen());
     }
   };
 
   @override
   List<RouteConfig> get routes => [
         RouteConfig(AuthScreenRoute.name, path: '/'),
-        RouteConfig(HomeScreenRoute.name, path: '/home-screen')
+        RouteConfig(HomeScreenRoute.name, path: '/home-screen'),
+        RouteConfig(CreateProductScreenRoute.name,
+            path: '/create-product-screen')
       ];
 }
 
@@ -48,4 +54,13 @@ class HomeScreenRoute extends PageRouteInfo<void> {
   const HomeScreenRoute() : super(HomeScreenRoute.name, path: '/home-screen');
 
   static const String name = 'HomeScreenRoute';
+}
+
+/// generated route for
+/// [CreateProductScreen]
+class CreateProductScreenRoute extends PageRouteInfo<void> {
+  const CreateProductScreenRoute()
+      : super(CreateProductScreenRoute.name, path: '/create-product-screen');
+
+  static const String name = 'CreateProductScreenRoute';
 }
