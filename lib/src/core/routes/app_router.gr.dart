@@ -26,7 +26,7 @@ class _$AppRouter extends RootStackRouter {
           routeData: routeData, child: const HomeScreen());
     },
     CreateProductScreenRoute.name: (routeData) {
-      return MaterialPageX<dynamic>(
+      return MaterialPageX<Product?>(
           routeData: routeData, child: const CreateProductScreen());
     }
   };

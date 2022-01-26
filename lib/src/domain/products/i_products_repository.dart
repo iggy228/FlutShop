@@ -1,5 +1,7 @@
+import 'package:flut_shop/src/domain/products/product.dart';
 import 'package:flut_shop/src/domain/products/products_response.dart';
 
 abstract class IProductsRepository {
-  Future<ProductsResponse> readAll();
+  Future<ProductsResponse> getAllProducts();
+  Future<Product?> addProduct(Product product);
 }

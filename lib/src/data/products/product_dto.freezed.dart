@@ -22,7 +22,7 @@ class _$ProductDtoTearOff {
   const _$ProductDtoTearOff();
 
   _ProductDto call(
-      {required String id,
+      {String? id,
       required String title,
       required String description,
       required double price,
@@ -46,7 +46,7 @@ const $ProductDto = _$ProductDtoTearOff();
 
 /// @nodoc
 mixin _$ProductDto {
-  String get id => throw _privateConstructorUsedError;
+  String? get id => throw _privateConstructorUsedError;
   String get title => throw _privateConstructorUsedError;
   String get description => throw _privateConstructorUsedError;
   double get price => throw _privateConstructorUsedError;
@@ -64,7 +64,7 @@ abstract class $ProductDtoCopyWith<$Res> {
           ProductDto value, $Res Function(ProductDto) then) =
       _$ProductDtoCopyWithImpl<$Res>;
   $Res call(
-      {String id,
+      {String? id,
       String title,
       String description,
       double price,
@@ -91,7 +91,7 @@ class _$ProductDtoCopyWithImpl<$Res> implements $ProductDtoCopyWith<$Res> {
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       title: title == freezed
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -119,7 +119,7 @@ abstract class _$ProductDtoCopyWith<$Res> implements $ProductDtoCopyWith<$Res> {
       __$ProductDtoCopyWithImpl<$Res>;
   @override
   $Res call(
-      {String id,
+      {String? id,
       String title,
       String description,
       double price,
@@ -148,7 +148,7 @@ class __$ProductDtoCopyWithImpl<$Res> extends _$ProductDtoCopyWithImpl<$Res>
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       title: title == freezed
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -173,7 +173,7 @@ class __$ProductDtoCopyWithImpl<$Res> extends _$ProductDtoCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_ProductDto extends _ProductDto {
   const _$_ProductDto(
-      {required this.id,
+      {this.id,
       required this.title,
       required this.description,
       required this.price,
@@ -184,7 +184,7 @@ class _$_ProductDto extends _ProductDto {
       _$$_ProductDtoFromJson(json);
 
   @override
-  final String id;
+  final String? id;
   @override
   final String title;
   @override
@@ -234,7 +234,7 @@ class _$_ProductDto extends _ProductDto {
 
 abstract class _ProductDto extends ProductDto {
   const factory _ProductDto(
-      {required String id,
+      {String? id,
       required String title,
       required String description,
       required double price,
@@ -245,7 +245,7 @@ abstract class _ProductDto extends ProductDto {
       _$_ProductDto.fromJson;
 
   @override
-  String get id;
+  String? get id;
   @override
   String get title;
   @override

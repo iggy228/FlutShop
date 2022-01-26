@@ -12,11 +12,12 @@ import 'package:google_sign_in/google_sign_in.dart' as _i6;
 import 'package:injectable/injectable.dart' as _i2;
 
 import 'data/auth/auth_facade.dart' as _i8;
-import 'data/core/firebase_injectable_module.dart' as _i13;
+import 'data/core/firebase_injectable_module.dart' as _i14;
 import 'data/products/products_repository.dart' as _i10;
 import 'domain/auth/i_auth_facade.dart' as _i7;
 import 'domain/products/i_products_repository.dart' as _i9;
 import 'presentation/bloc/auth/login_form_bloc.dart' as _i11;
+import 'presentation/bloc/create_product/create_product_form_bloc.dart' as _i13;
 import 'presentation/bloc/home/products_bloc.dart'
     as _i12; // ignore_for_file: unnecessary_lambdas
 
@@ -42,7 +43,9 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
       () => _i11.LoginFormBloc(get<_i7.IAuthFacade>()));
   gh.factory<_i12.ProductsBloc>(
       () => _i12.ProductsBloc(get<_i9.IProductsRepository>()));
+  gh.factory<_i13.CreateProductFormBloc>(() => _i13.CreateProductFormBloc(
+      get<_i5.FirebaseStorage>(), get<_i9.IProductsRepository>()));
   return get;
 }
 
-class _$FirebaseInjectableModule extends _i13.FirebaseInjectableModule {}
+class _$FirebaseInjectableModule extends _i14.FirebaseInjectableModule {}

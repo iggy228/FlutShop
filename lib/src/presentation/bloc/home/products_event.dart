@@ -4,3 +4,9 @@ part of 'products_bloc.dart';
 abstract class ProductsEvent {}
 
 class ProductsEventGetProducts extends ProductsEvent {}
+
+class ProductsEventAddProduct extends ProductsEvent {
+  final Product product;
+
+  ProductsEventAddProduct(this.product);
+}

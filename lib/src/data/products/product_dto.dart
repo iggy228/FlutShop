@@ -10,7 +10,7 @@ class ProductDto with _$ProductDto {
   const ProductDto._();
 
   const factory ProductDto({
-    required String id,
+    String? id,
     required String title,
     required String description,
     required double price,
