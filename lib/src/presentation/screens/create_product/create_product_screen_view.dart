@@ -1,7 +1,8 @@
-import 'dart:io';
-
+import 'package:flut_shop/src/core/utils/decimal_formatter.dart';
+import 'package:flut_shop/src/core/utils/validators/not_empty_validator.dart';
+import 'package:flut_shop/src/presentation/bloc/create_product/create_product_form_bloc.dart';
 import 'package:flutter/material.dart';
-import 'package:image_picker/image_picker.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class CreateProductScreenView extends StatefulWidget {
   const CreateProductScreenView({Key? key}) : super(key: key);
@@ -12,20 +13,6 @@ class CreateProductScreenView extends StatefulWidget {
 }
 
 class _CreateProductScreenViewState extends State<CreateProductScreenView> {
-  Image? image;
-
-  Future<void> pickImage() async {
-    final pickImage =
-        await ImagePicker().pickImage(source: ImageSource.gallery);
-
-    if (pickImage != null) {
-      final file = File(pickImage.path);
-      setState(() {
-        image = Image.file(file);
-      });
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -37,40 +24,70 @@ class _CreateProductScreenViewState extends State<CreateProductScreenView> {
         body: ListView(
           padding: const EdgeInsets.all(10),
           children: [
-            image ??
-                AspectRatio(
-                  aspectRatio: 16 / 9,
-                  child: const Icon(Icons.image),
-                ),
+            buildImageView(context),
             ElevatedButton(
-              onPressed: () => pickImage(),
+              onPressed: () => context.read<CreateProductFormBloc>().add(
+                    CreateProductFormPickImage(),
+                  ),
               child: Text('Pick image'),
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             TextFormField(
               maxLength: 100,
+              onChanged: (val) => context.read<CreateProductFormBloc>().add(
+                    CreateProductFormTitleChanged(val),
+                  ),
+              validator: notEmptyValidator,
               decoration: InputDecoration(
                 hintText: 'Type title',
               ),
             ),
             TextFormField(
               maxLines: 6,
+              onChanged: (val) => context.read<CreateProductFormBloc>().add(
+                    CreateProductFormDescriptionChanged(val),
+                  ),
+              validator: notEmptyValidator,
               keyboardType: TextInputType.multiline,
               decoration: InputDecoration(
                 hintText: 'Description ...',
               ),
             ),
+            SizedBox(height: 16),
             TextFormField(
               keyboardType: TextInputType.number,
-              // TODO implement decimal input formater
-              inputFormatters: [],
+              textAlign: TextAlign.end,
+              inputFormatters: [DecimalFormatter()],
+              onChanged: (val) => context.read<CreateProductFormBloc>().add(
+                    CreateProductFormPriceChanged(val),
+                  ),
+              validator: notEmptyValidator,
               decoration: InputDecoration(
-                hintText: '9.99',
+                hintText: 'Price: 9.99',
+                suffixText: '\u{20AC}',
               ),
+            ),
+            const SizedBox(height: 16),
+            ElevatedButton(
+              onPressed: () => context.read<CreateProductFormBloc>().add(
+                    CreateProductFormSubmit(context),
+                  ),
+              child: Text('Vytvorit'),
             ),
           ],
         ),
       ),
     );
+  }
+
+  Widget buildImageView(BuildContext context) {
+    final imageFile = context.watch<CreateProductFormBloc>().state.imageFile;
+    if (imageFile == null) {
+      return const AspectRatio(
+        aspectRatio: 16 / 9,
+        child: Icon(Icons.image),
+      );
+    }
+    return Image.file(imageFile);
   }
 }
