@@ -1,16 +1,14 @@
-# flut_shop
+# Flutshop
 
-Simple eshop that will work on firebase and riverpod and many others packages. It will be for ios, android and web
+Simple eshop app that is made in **Flutter**. Used technologies: firebase, bloc and many others packages. It will be for now on Android
 
-## Getting Started
+## Current features
 
-This project is a starting point for a Flutter application.
+Now in app you can login and register via email and password. Also app has option for login via Google account. You can view and create product with function pull to refresh for updating result in home page products.
 
-A few resources to get you started if this is your first Flutter project:
+## Planning features
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- [ ] Dynamic refresh after creating
+- [ ] Add page for detail for product
+- [ ] Rating system
+- [ ] Account drawer panel
